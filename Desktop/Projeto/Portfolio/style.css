@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    background: #000000;
+    overflow-x: hidden;
+}
+
+/*Custom Scroll Bar CSS*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #5e0459;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #5e0459;
+}
+
+/*Navbar styling*/
+nav {
+    width: 100%;
+    height: 10vh;
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #5e0459;
+    text-shadow: 0 0 10px #5e0459;
+}
+
+.hamburger,
+.cancel{
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+
+.nav-container .links {
+    display: flex;
+}
+
+.nav-container .links a{
+    position: relative;
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+
+.nav-container .links a::before{
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #5e0459;
+    transition: 0.2s linear;
+}
+
+.nav-container .links a:hover::before{
+    width: 100%;
+}
+
+.nav-container .links a:hover{
+    color: #5e0459;
+}
+
+.dropdown {
+    z-index: 100;
+    position:absolute;
+    top: 0;
+    transform: translateY(-500%);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0 20px #070606;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a {
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover {
+    background-color: #5e0459;
+}
+
+section {
+    width: 100%;
+    min-height: 90vh;
+}
+
+section .main-container{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 100px;
+    align-items: center;
+}
+
+.main-container .image{
+    width: 500px;
+    height: 80vh;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0 0 50px #5e0459;
+}
+
+.main-container .image img{
+    width: 100%;
+}
+.main-container .image:hover{
+    animation: animate 1.5s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0%{
+        scale: 1;
+    }
+    50%{
+        scale: 1.5;
+    }
+    100%{
+        scale: 1;
+    }
+}
+
+.main-container .content{
+    width: 40%;
+    color: #fff;
+}
